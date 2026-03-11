@@ -1,0 +1,169 @@
+/* Color Palette & Variables */
+:root {
+    --bg-color: #faf6f1;
+    --text-dark: #292524;
+    --text-muted: #78716c;
+    --brainrot-pink: #ec4899;
+    --formal-indigo: #4338ca;
+    --border-color: #292524;
+}
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    font-family: system-ui, -apple-system, sans-serif;
+    /* Subtle diagonal line pattern */
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.03) 10px, rgba(0,0,0,0.03) 11px);
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 672px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Header & Animation */
+header {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.asterisk {
+    display: inline-block;
+    color: var(--brainrot-pink);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* Brutalist Cards */
+.card {
+    background: white;
+    border: 3px solid var(--border-color);
+    box-shadow: 4px 4px 0px var(--border-color);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+/* Badges */
+.badge {
+    position: absolute;
+    top: -12px;
+    left: 1.5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+    color: white;
+}
+
+.brainrot-badge {
+    background-color: var(--brainrot-pink);
+    font-family: monospace;
+}
+
+.formal-badge {
+    background-color: var(--formal-indigo);
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+
+/* Text Areas */
+textarea {
+    width: 100%;
+    min-height: 150px;
+    font-family: monospace;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+    resize: vertical;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.output-box {
+    width: 100%;
+    min-height: 100px;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 1.25rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    color: var(--text-dark);
+}
+
+/* Buttons */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.action-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border: 3px solid var(--border-color);
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 0px var(--border-color);
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px var(--border-color);
+}
+
+.primary-btn {
+    background-color: var(--text-dark);
+    color: white;
+    font-size: 1.1rem;
+    width: 100%;
+}
+
+.primary-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.secondary-btn {
+    background-color: white;
+    color: var(--text-dark);
+}
+
+/* Errors & Utilities */
+.hidden { display: none !important; }
+.error-text { color: red; font-weight: bold; }
